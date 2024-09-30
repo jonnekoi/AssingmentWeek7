@@ -22,7 +22,7 @@ This project is a simple Java console application that allows users to log their
     mvn clean install
     ```
 
-3. **Run the application:**
+3. **Run the application**
     
 
 ## Usage
