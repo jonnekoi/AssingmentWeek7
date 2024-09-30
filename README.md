@@ -1,4 +1,4 @@
-# Sport Activity Logger
+# Sport log
 
 This project is a simple Java console application that allows users to log their sport activities, view all logged activities, and calculate the total time spent on activities.
 
@@ -9,20 +9,12 @@ This project is a simple Java console application that allows users to log their
 - Calculate total time spent on activities
 - Exit the application
 
-## Prerequisites
-
-- Java Development Kit (JDK) 21 or higher
-- Maven
-
-## Project Structure
-AssingmentWeek7/ ├── pom.xml └── src/ └── main/ └── java/ ├── App.java └── SportApp.java
 
 ## Getting Started
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/AssingmentWeek7.git
-    cd AssingmentWeek7
+    git clone https://github.com/jonnekoi/AssingmentWeek7.git
     ```
 
 2. **Build the project using Maven:**
@@ -47,4 +39,3 @@ AssingmentWeek7/ ├── pom.xml └── src/ └── main/ └── java
 4. **Exit the application:**
     - Choose option `4` to exit the application.
 
-## Example
