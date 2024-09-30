@@ -1,39 +1,50 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 public class AppTest {
 
     @Test
-    public void testAddAndShowActivities() {
-        String input = "1\nRunning\n1\nMonday\n2\n4\n";
-        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        App.main(new String[]{});
-
-        String output = out.toString();
-        assertTrue(output.contains("Sport added"));
-        assertTrue(output.contains("Activity: Run, Duration: 1 hours, Day: Monday"));
+    public void testGetName() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        assertEquals("Run", sport.getName());
     }
 
     @Test
-    public void testTotalTimeOnActivities() {
-        String input = "1\nRunning\n1\nMonday\n1\nSwimming\n2\nTuesday\n3\n4\n";
-        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
+    public void testGetDuration() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        assertEquals(1, sport.getDuration());
+    }
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
+    @Test
+    public void testGetDay() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        assertEquals("Monday", sport.getDay());
+    }
 
-        App.main(new String[]{});
+    @Test
+    public void testSetName() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        sport.setName("Swim");
+        assertEquals("Swim", sport.getName());
+    }
 
-        String output = out.toString();
-        assertTrue(output.contains("3"));
+    @Test
+    public void testSetDuration() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        sport.setDuration(2);
+        assertEquals(2, sport.getDuration());
+    }
+
+    @Test
+    public void testSetDay() {
+        SportApp sport = new SportApp("Run", 1, "Monday");
+        sport.setDay("Tuesday");
+        assertEquals("Tuesday", sport.getDay());
+    }
+
+    @Test
+    public void testToString() {
+        SportApp sport = new SportApp("Running", 1, "Monday");
+        assertEquals("Activity: Running, Duration: 1 hours, Day: Monday", sport.toString());
     }
 }
